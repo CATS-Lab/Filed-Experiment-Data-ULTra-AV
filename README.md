@@ -68,7 +68,7 @@ Data attributes are shown below:
 | Trajectory_ID | ID of the longitudinal trajectory.           | $i \in \mathcal{I}$                                                            | N/A  |
 | Time_Index    | Common time stamp in one trajectory.         | $t \in \mathcal{T}_i, i \in \mathcal{I}$                                       | s    |
 | ID_LV         | LV (lead vehicle) ID.                        | $c^{\mathrm{l}}_i, i \in \mathcal{I}$. Label each FAV with a different ID and all HVs with -1. | N/A  |
-| Pos_LV        | LV position in the Frenet coordinates.       | $p^{\mathrm{l}}_{it} = p^{\mathrm{f}}_{it} + h_{it}, i \in \mathcal{I}, t \in \mathcal{T}_i$ | m    |
+| Pos_LV        | LV position in the Frenet coordinates.       | $p^{\mathrm{l}}_{it}=p^{\mathrm{f}}_{it}+h_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
 | Speed_LV      | LV speed.                                    | $v^{\mathrm{l}}_{it} = \frac{p^{\mathrm{l}}_{i(t+1)} - p^{\mathrm{l}}_{it}}{\Delta t}, i \in \mathcal{I}, t \in \mathcal{T}_i$ | m/s  |
 | Acc_LV        | LV acceleration.                             | $a^{\mathrm{l}}_{it} = \frac{v^{\mathrm{l}}_{i(t+1)} - v^{\mathrm{l}}_{it}}{\Delta t}, i \in \mathcal{I}, t \in \mathcal{T}_i$ | m/s² |
 | ID_FAV        | FAV (following automated vehicle) ID.        | $c^{\mathrm{f}}_i, i \in \mathcal{I}$. Label each FAV with a different ID. | N/A  |
