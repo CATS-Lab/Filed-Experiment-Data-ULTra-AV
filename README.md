@@ -78,6 +78,7 @@ Data attributes are shown below:
 | Space_Gap     | Bump-to-bump distance between two vehicles.  | $g_{it}=p^{\mathrm{l}}_{it}-p^{\mathrm{f}}_{it} - l^{\mathrm{f}}/2 -l^{\mathrm{l}}/2, i\in \mathcal{I}, t\in \mathcal{T}_i$, where $l^{\mathrm{f}}$ and $l^{\mathrm{f}}$ are the length of the LV and the FAV. | m    |
 | Space_Headway | Distance between the center of two vehicles. | $h_{it}=p^{\mathrm{l}}_{it}-p^{\mathrm{f}}_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
 | Speed_Diff    | Speed difference of the two vehicles.        | $\Delta v_{it}=v^{\mathrm{l}}_{it}-v^{\mathrm{f}}_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s  |
+
 The FAV ID are provided below:
 
 **Vanderbilt Two-vehicle ACC Dataset:**
