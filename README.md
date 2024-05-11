@@ -6,7 +6,7 @@ This repo provides the source code and data for the following paper:
 
 ULTra-AV: A Unified Longitudinal Trajectory Dataset for Automated Vehicle
 
-In this paper, we processed a unified trajectory dataset for automated vehicles'  longitudinal behavior from 13 distinct sources. The extraction and cleaning of the dataset contains the following three steps -  1. extraction of longitudinal trajectory data, 2. general data cleaning, and 3. data-specific cleaning. The dataset obtained from step 2 and step 3 are named as the longitudinal trajectory data and car-following trajectory data. We also analyzed and validated the data by multiple methods. The obtained datasets and the python code used to analyzed the datasets are all provided in this repo. We hope this dataset can benefit the study of  microscopic longitudinal AV behaviors.
+In this paper, we processed a unified trajectory dataset for automated vehicles'  longitudinal behavior from 13 distinct sources. The extraction and cleaning of the dataset contains the following three steps -  1. extraction of longitudinal trajectory data, 2. general data cleaning, and 3. data-specific cleaning. The dataset obtained from step 2 and step 3 are named as the longitudinal trajectory data and car-following trajectory data. We also analyzed and validated the data by multiple methods. The obtained datasets and the python code used to analyze the datasets are all provided in this repo. We hope this dataset can benefit the study of  microscopic longitudinal AV behaviors.
 
 ## Original Datasets
 
@@ -29,7 +29,7 @@ We have examined 13 open-source datasets, each providing distinct insights into 
   - [Waymo Motion Dataset](https://waymo.com/open/data/motion/)
   - [Vehicle trajectory data processed from the Waymo Open Dataset](https://data.mendeley.com/datasets/wfn2c3437n/2)
 - **Argoverse 2 Motion Forecasting Dataset** [7]. Collected from Austin in Texas, Detroit in Michigan, Miami in Florida, Pittsburgh in Pennsylvania, Palo Alto in California, and Washington, D.C. by Argo AI with researchers from Carnegie Mellon University and the Georgia Institute of Technology. Available at - 
-  - [Argoverse 2 Motion Forcasting Dataset]([Argoverse 2](https://www.argoverse.org/av2.html))
+  - [Argoverse 2 Motion Forcasting Dataset](https://www.argoverse.org/av2.html)
 
 For more details of the datasets, please refer to the reference and our paper.
 
