@@ -6,7 +6,7 @@ This repo provides the source code and data for the following paper:
 
 ULTra-AV: A Unified Longitudinal Trajectory Dataset for Automated Vehicle
 
-In this paper, we processed a unified trajectory dataset for automated vehicles'  longitudinal behavior from 13 distinct sources. The extraction and cleaning of the dataset contains the following three steps -  1. extraction of longitudinal trajectory data, 2. general data cleaning, and 3. data-specific cleaning. The dataset obtained from step 2 and step 3 are named as the longitudinal trajectory data and car-following trajectory data. We also analyzed and validated the data by multiple methods. The obtained datasets and the python code used to analyzed the datasets are all provided in this repo. We hope this dataset can benefit the study of  microscopic longitudinal AV behaviors.
+In this paper, we processed a unified trajectory dataset for automated vehicles'  longitudinal behavior from 13 distinct sources. The extraction and cleaning of the dataset contains the following three steps -  1. extraction of longitudinal trajectory data, 2. general data cleaning, and 3. data-specific cleaning. The dataset obtained from step 2 and step 3 are named as the longitudinal trajectory data and car-following trajectory data. We also analyzed and validated the data by multiple methods. The obtained datasets and the python code used to analyze the datasets are all provided in this repo. We hope this dataset can benefit the study of  microscopic longitudinal AV behaviors.
 
 ## Original Datasets
 
@@ -68,13 +68,13 @@ Data attributes are shown below:
 | Trajectory_ID | ID of the longitudinal trajectory.           | $i\in \mathcal{I}$.                                          | N/A  |
 | Time_Index    | Common time stamp in one trajectory.         | $t\in \mathcal{T}_i, i\in \mathcal{I}$.                      | s    |
 | ID_LV         | LV (lead vehicle) ID.                        | $c^{\mathrm{l}}_i, i\in \mathcal{I}$. Label each FAV with a different ID and all HVs with -1. | N/A  |
-| Pos_LV        | LV position in the Frenet coordinate.        | $p^{\mathrm{l}}_{it}=p^{\mathrm{f}}_{it}+h_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
-| Speed_LV      | LV speed.                                    | $v^{\mathrm{l}}_{it}=\frac{p^{\mathrm{l}}_{i(t+1)}-p^{\mathrm{l}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s  |
-| Acc_LV        | LV acceleration.                             | $a^{\mathrm{l}}_{it}=\frac{v^{\mathrm{l}}_{i(t+1)}-v^{\mathrm{l}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s² |
+| Pos_LV        | LV position in the Frenet coordinates.        | $p^{\mathrm{l}}_{it}=p^{\mathrm{f}}_{it}+h_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
+| Speed_LV      | LV speed.                                    | $v^{\mathrm{l}}_{it}=\frac{p^{\mathrm{l}}{i(t+1)}-p^{\mathrm{l}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s  |
+| Acc_LV        | LV acceleration.                             | $a^{\mathrm{l}}_{it}=\frac{v^{\mathrm{l}}{i(t+1)}-v^{\mathrm{l}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s² |
 | ID_FAV        | FAV (following automated vehicle) ID.        | $c^{\mathrm{f}}_i, i\in \mathcal{I}$. Label each FAV with a different ID. | N/A  |
-| Pos_FAV       | FAV position in the Frenet coordinate.       | $p^{\mathrm{f}}_{it}=p^{\mathrm{f}}_{i(t-1)}+\Delta t \cdot v^{\mathrm{f}}_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
-| Speed_FAV     | FAV speed.                                   | $v^{\mathrm{f}}_{it}=\frac{p^{\mathrm{f}}_{i(t+1)}-p^{\mathrm{f}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s  |
-| Acc_FAV       | FAV acceleration.                            | $a^{\mathrm{f}}_{it}=\frac{v^{\mathrm{f}}_{i(t+1)}-v^{\mathrm{f}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s² |
+| Pos_FAV       | FAV position in the Frenet coordinates.       | $p^{\mathrm{f}}_{it}=p^{\mathrm{f}}_{i(t-1)}+\Delta t \cdot v^{\mathrm{f}}_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
+| Speed_FAV     | FAV speed.                                   | $v^{\mathrm{f}}_{it}=\frac{p^{\mathrm{f}}{i(t+1)}-p^{\mathrm{f}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s  |
+| Acc_FAV       | FAV acceleration.                            | $a^{\mathrm{f}}_{it}=\frac{v^{\mathrm{f}}{i(t+1)}-v^{\mathrm{f}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s² |
 | Space_Gap     | Bump-to-bump distance between two vehicles.  | $g_{it}=p^{\mathrm{l}}_{it}-p^{\mathrm{f}}_{it} - l^{\mathrm{f}}/2 -l^{\mathrm{l}}/2, i\in \mathcal{I}, t\in \mathcal{T}_i$, where $l^{\mathrm{f}}$ and $l^{\mathrm{f}}$ are the length of the LV and the FAV. | m    |
 | Space_Headway | Distance between the center of two vehicles. | $h_{it}=p^{\mathrm{l}}_{it}-p^{\mathrm{f}}_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
 | Speed_Diff    | Speed difference of the two vehicles.        | $\Delta v_{it}=v^{\mathrm{l}}_{it}-v^{\mathrm{f}}_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s  |
