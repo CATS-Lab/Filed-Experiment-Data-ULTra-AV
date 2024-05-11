@@ -6,7 +6,7 @@ This repo provides the source code and data for the following paper:
 
 ULTra-AV: A Unified Longitudinal Trajectory Dataset for Automated Vehicle
 
-In this paper, we processed a unified trajectory dataset for automated vehicles'  longitudinal behavior from 13 distinct sources. The extraction and cleaning of the dataset contains the following three steps -  1. extraction of longitudinal trajectory data, 2. general data cleaning, and 3. data-specific cleaning. The dataset obtained from step 2 and step 3 are named as the longitudinal trajectory data and car-following trajectory data. We also analyzed and validated the data by multiple methods. The obtained datasets and the python code used to analyze the datasets are all provided in this repo. We hope this dataset can benefit the study of  microscopic longitudinal AV behaviors.
+In this paper, we processed a unified trajectory dataset for automated vehicles'  longitudinal behavior from 13 distinct sources. The extraction and cleaning of the dataset contains the following three steps -  1. extraction of longitudinal trajectory data, 2. general data cleaning, and 3. data-specific cleaning. The dataset obtained from step 2 and step 3 are named as the longitudinal trajectory data and car-following trajectory data. We also analyzed and validated the data by multiple methods. The obtained datasets and the python code used to analyzed the datasets are all provided in this repo. We hope this dataset can benefit the study of  microscopic longitudinal AV behaviors.
 
 ## Original Datasets
 
@@ -23,10 +23,10 @@ We have examined 13 open-source datasets, each providing distinct insights into 
   - [AstaZero](https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/TransportExpData/JRCDBT0001/LATEST/AstaZero/)
   - [ZalaZone](https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/TransportExpData/JRCDBT0001/LATEST/ZalaZone/)
 - **Central Ohio ACC Datasets** [4]. Two datasets were collated in Ohio by UCLA's Mobility Lab and Transportation Research Center. Available at - 
-  - [Advanced Driver Assistance System (ADAS)-Equipped Single-Vehicle Data for Central Ohio]([Advanced Driver Assistance System (ADAS)-Equipped Single-Vehicle Data for Central Ohio - Catalog](https://catalog.data.gov/dataset/advanced-driver-assistance-system-adas-equipped-single-vehicle-data-for-central-ohio))
-  - [Advanced Driver Assistance System (ADAS)-Equipped Two-Vehicle Data for Central Ohio]([Advanced Driver Assistance System (ADAS)-Equipped Two-Vehicle Data for Central Ohio - Catalog](https://catalog.data.gov/dataset/advanced-driver-assistance-system-adas-equipped-two-vehicle-data-for-central-ohio))
+  - [Advanced Driver Assistance System (ADAS)-Equipped Single-Vehicle Data for Central Ohio](https://catalog.data.gov/dataset/advanced-driver-assistance-system-adas-equipped-single-vehicle-data-for-central-ohio)
+  - [Advanced Driver Assistance System (ADAS)-Equipped Two-Vehicle Data for Central Ohio](https://catalog.data.gov/dataset/advanced-driver-assistance-system-adas-equipped-two-vehicle-data-for-central-ohio)
 - **Waymo Open Dataset** [5, 6]. Two datasets were collected in six cities including San Francisco, Mountain View, and Los Angeles in California, Phoenix in Arizona, Detroit in Michigan, and Seattle in Washington by Waymo. Available at - 
-  - [Waymo Motion Dataset]([Motion – Data – Waymo Open Dataset](https://waymo.com/open/data/motion/))
+  - [Waymo Motion Dataset](https://waymo.com/open/data/motion/)
   - [Vehicle trajectory data processed from the Waymo Open Dataset](https://data.mendeley.com/datasets/wfn2c3437n/2)
 - **Argoverse 2 Motion Forecasting Dataset** [7]. Collected from Austin in Texas, Detroit in Michigan, Miami in Florida, Pittsburgh in Pennsylvania, Palo Alto in California, and Washington, D.C. by Argo AI with researchers from Carnegie Mellon University and the Georgia Institute of Technology. Available at - 
   - [Argoverse 2 Motion Forcasting Dataset]([Argoverse 2](https://www.argoverse.org/av2.html))
@@ -63,21 +63,22 @@ To use this repo, run Python script `Main.py`. As you proceed through each Pytho
 Extracted datasets are stored in [Box link](https://uwmadison.box.com/s/6e74ehpj2rx6kbjnma1b1ok4fupe5nkb).
 
 Data attributes are shown below:
-| Label         | Description                                  | Notations and formulation                                                                                             | Unit          |
-|---------------|----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|---------------|
-| Trajectory_ID | ID of the longitudinal trajectory.           | $i \in \mathcal{I}$.                                                                                                   | N/A           |
-| Time_Index    | Common time stamp in one trajectory.         | $t \in \mathcal{T}_i, i \in \mathcal{I}$.                                                                              | s             |
-| ID_LV         | LV ID.                                       | $c^{\mathrm{l}}_i, i \in \mathcal{I}$. Label each FAV with a different ID and all HVs with -1.                         | N/A           |
-| Pos_LV        | LV position in the Frenet coordinate.        | $p^{\mathrm{l}}_{it} = p^{\mathrm{f}}_{it} + h_{it}, i \in \mathcal{I}, t \in \mathcal{T}_i$.                          | m             |
-| Speed_LV      | LV speed.                                    | $v^{\mathrm{l}}_{it} = \frac{p^{\mathrm{l}}_{i(t+1)} - p^{\mathrm{l}}_{it}}{\Delta t}, i \in \mathcal{I}, t \in \mathcal{T}_i$. | m/s           |
-| Acc_LV        | LV acceleration.                             | $a^{\mathrm{l}}_{it} = \frac{v^{\mathrm{l}}_{i(t+1)} - v^{\mathrm{l}}_{it}}{\Delta t}, i \in \mathcal{I}, t \in \mathcal{T}_i$. | m/s²          |
-| ID_FAV        | FAV ID.                                      | $c^{\mathrm{f}}_i, i \in \mathcal{I}$. Label each FAV with a different ID.                                              | N/A           |
-| Pos_FAV       | FAV position in the Frenet coordinate.       | $p^{\mathrm{f}}_{it} = p^{\mathrm{f}}_{i(t-1)} + \Delta t \cdot v^{\mathrm{f}}_{it}, i \in \mathcal{I}, t \in \mathcal{T}_i$. | m             |
-| Speed_FAV     | FAV speed.                                   | $v^{\mathrm{f}}_{it} = \frac{p^{\mathrm{f}}_{i(t+1)} - p^{\mathrm{f}}_{it}}{\Delta t}, i \in \mathcal{I}, t \in \mathcal{T}_i$. | m/s           |
-| Acc_FAV       | FAV acceleration.                            | $a^{\mathrm{f}}_{it} = \frac{v^{\mathrm{f}}_{i(t+1)} - v^{\mathrm{f}}_{it}}{\Delta t}, i \in \mathcal{I}, t \in \mathcal{T}_i$. | m/s²          |
-| Space_Gap     | Bump-to-bump distance between two vehicles.  | $g_{it} = p^{\mathrm{l}}_{it} - p^{\mathrm{f}}_{it} - \frac{l^{\mathrm{f}}}{2} - \frac{l^{\mathrm{l}}}{2}, i \in \mathcal{I}, t \in \mathcal{T}_i$, where $l^{\mathrm{f}}$ and $l^{\mathrm{f}}$ are the length of the LV and the FAV. | m             |
-| Space_Headway | Distance between the center of two vehicles. | $h_{it} = p^{\mathrm{l}}_{it} - p^{\mathrm{f}}_{it}, i \in \mathcal{I}, t \in \mathcal{T}_i$.                          | m             |
-| Speed_Diff    | Speed difference of the two vehicles.        | $\Delta v_{it} = v^{\mathrm{l}}_{it} - v^{\mathrm{f}}_{it}, i \in \mathcal{I}, t \in \mathcal{T}_i$.                   | m/s           |
+
+| Label         | Description                                  | Notations and formulation                                    | Unit |
+| ------------- | -------------------------------------------- | ------------------------------------------------------------ | ---- |
+| Trajectory_ID | ID of the longitudinal trajectory.           | $i\in \mathcal{I}$.                                          | N/A  |
+| Time_Index    | Common time stamp in one trajectory.         | $t\in \mathcal{T}_i, i\in \mathcal{I}$.                      | s    |
+| ID_LV         | LV (lead vehicle) ID.                        | $c^{\mathrm{l}}_i, i\in \mathcal{I}$. Label each FAV with a different ID and all HVs with -1. | N/A  |
+| Pos_LV        | LV position in the Frenet coordinate.        | $p^{\mathrm{l}}_{it}=p^{\mathrm{f}}_{it}+h_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
+| Speed_LV      | LV speed.                                    | $v^{\mathrm{l}}_{it}=\frac{p^{\mathrm{l}}_{i(t+1)}-p^{\mathrm{l}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s  |
+| Acc_LV        | LV acceleration.                             | $a^{\mathrm{l}}_{it}=\frac{v^{\mathrm{l}}_{i(t+1)}-v^{\mathrm{l}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s² |
+| ID_FAV        | FAV (following automated vehicle) ID.        | $c^{\mathrm{f}}_i, i\in \mathcal{I}$. Label each FAV with a different ID. | N/A  |
+| Pos_FAV       | FAV position in the Frenet coordinate.       | $p^{\mathrm{f}}_{it}=p^{\mathrm{f}}_{i(t-1)}+\Delta t \cdot v^{\mathrm{f}}_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
+| Speed_FAV     | FAV speed.                                   | $v^{\mathrm{f}}_{it}=\frac{p^{\mathrm{f}}_{i(t+1)}-p^{\mathrm{f}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s  |
+| Acc_FAV       | FAV acceleration.                            | $a^{\mathrm{f}}_{it}=\frac{v^{\mathrm{f}}_{i(t+1)}-v^{\mathrm{f}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s² |
+| Space_Gap     | Bump-to-bump distance between two vehicles.  | $g_{it}=p^{\mathrm{l}}_{it}-p^{\mathrm{f}}_{it} - l^{\mathrm{f}}/2 -l^{\mathrm{l}}/2, i\in \mathcal{I}, t\in \mathcal{T}_i$, where $l^{\mathrm{f}}$ and $l^{\mathrm{f}}$ are the length of the LV and the FAV. | m    |
+| Space_Headway | Distance between the center of two vehicles. | $h_{it}=p^{\mathrm{l}}_{it}-p^{\mathrm{f}}_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
+| Speed_Diff    | Speed difference of the two vehicles.        | $\Delta v_{it}=v^{\mathrm{l}}_{it}-v^{\mathrm{f}}_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s  |
 
 The FAV ID are provided below:
 
