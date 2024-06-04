@@ -4,9 +4,9 @@
 
 This repo provides the source code and data for the following paper:
 
-Zhou, Hang, Ke Ma, Shixiao Liang, Xiaopeng Li, and Xiaobo Qu. "ULTra-AV: A Unified Longitudinal Trajectory Dataset for Automated Vehicle." (2024)
+Zhou H, Ma K, Liang S, Li X, Qu X (2024) Ultra-av: A unified longitudinal trajectory dataset for automated vehicle. [https://arxiv.org/abs/2406.00009](https://arxiv.org/abs/2406.00009)
 
-In this paper, we processed a unified trajectory dataset for automated vehicles'  longitudinal behavior from 13 distinct sources. The extraction and cleaning of the dataset contains the following three steps -  1. extraction of longitudinal trajectory data, 2. general data cleaning, and 3. data-specific cleaning. The dataset obtained from step 2 and step 3 are named as the longitudinal trajectory data and car-following trajectory data. We also analyzed and validated the data by multiple methods. The obtained datasets and the python code used to analyze the datasets are all provided in this repo. We hope this dataset can benefit the study of  microscopic longitudinal AV behaviors.
+In this paper, we processed a unified trajectory dataset for automated vehicles'  longitudinal behavior from 13 distinct sources. The extraction and cleaning of the dataset contains the following three steps -  1. extraction of longitudinal trajectory data, 2. general data cleaning, and 3. data-specific cleaning. The dataset obtained from step 2 and step 3 are named as the longitudinal trajectory data and car-following trajectory data. We also analyzed and validated the data by multiple methods. The obtained datasets and the Python code used to analyze the datasets are all provided in this repo. We hope this dataset can benefit the study of  microscopic longitudinal AV behaviors.
 
 ## Original Datasets
 
