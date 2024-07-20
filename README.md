@@ -193,4 +193,8 @@ If you have any questions, please feel free to contact CATS Lab in UW-Madison. W
 
 [7] Ettinger, Scott, Shuyang Cheng, Benjamin Caine, Chenxi Liu, Hang Zhao, Sabeek Pradhan, Yuning Chai et al. "Large scale interactive motion forecasting for autonomous driving: The waymo open motion dataset." In *Proceedings of the IEEE/CVF International Conference on Computer Vision*, pp. 9710-9719. 2021.
 
+<<<<<<< HEAD
 [8] Wilson, Benjamin, William Qi, Tanmay Agarwal, John Lambert, Jagjeet Singh, Siddhesh Khandelwal, Bowen Pan et al. "Argoverse 2: Next generation datasets for self-driving perception and forecasting." *arXiv preprint arXiv:2301.00493* (2023).
+=======
+[8] Wilson, Benjamin, William Qi, Tanmay Agarwal, John Lambert, Jagjeet Singh, Siddhesh Khandelwal, Bowen Pan et al. "Argoverse 2: Next generation datasets for self-driving perception and forecasting." *arXiv preprint arXiv:2301.00493* (2023).
+>>>>>>> 5602a552dd06b7bce10d10fdff5f98dc55ef64db
