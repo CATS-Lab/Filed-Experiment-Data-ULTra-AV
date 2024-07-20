@@ -1,12 +1,14 @@
-# ULTra-AV: A Unified Longitudinal Trajectory Dataset for Automated Vehicle
+# Ultra-AV: A unified longitudinal trajectory dataset for automated vehicle
 
 ## Introduction
 
 This repo provides the source code and data for the following paper:
 
-Zhou, Hang, Ke Ma, Shixiao Liang, Xiaopeng Li, and Xiaobo Qu. "ULTra-AV: A Unified Longitudinal Trajectory Dataset for Automated Vehicle." (2024)
+Zhou, Hang, Ke Ma, Shixiao Liang, Xiaopeng Li, and Xiaobo Qu. "A unified longitudinal trajectory dataset for automated vehicle." (2024) https://arxiv.org/abs/2406.00009
 
-In this paper, we processed a unified trajectory dataset for automated vehicles'  longitudinal behavior from 13 distinct sources. The extraction and cleaning of the dataset contains the following three steps -  1. extraction of longitudinal trajectory data, 2. general data cleaning, and 3. data-specific cleaning. The dataset obtained from step 2 and step 3 are named as the longitudinal trajectory data and car-following trajectory data. We also analyzed and validated the data by multiple methods. The obtained datasets and the python code used to analyze the datasets are all provided in this repo. We hope this dataset can benefit the study of  microscopic longitudinal AV behaviors.
+
+
+We processed a unified trajectory dataset for automated vehicles' longitudinal behavior from 14 distinct sources. The extraction and cleaning of the dataset contains the following three steps - 1. extraction of longitudinal trajectory data, 2. general data cleaning, and 3. data-specific cleaning. The dataset obtained from step 2 and step 3 are named as the longitudinal trajectory data and car-following trajectory data. We also analyzed and validated the data by multiple methods. The obtained datasets are provided in [[Ultra-AV: A unified longitudinal trajectory dataset for automated vehicle (figshare.com)](https://figshare.com/articles/dataset/Ultra-AV_A_unified_longitudinal_trajectory_dataset_for_automated_vehicle/26339512)]. The Python code used to analyze the datasets can be found at https://github.com/CATS-Lab/Filed-Experiment-Data-ULTra-AV. We hope this dataset can benefit the study of microscopic longitudinal AV behaviors.
 
 ## Original Datasets
 
@@ -14,21 +16,24 @@ We have examined 13 open-source datasets, each providing distinct insights into 
 
 - **Vanderbilt ACC Dataset** [1]. Collected in Nashville, Tennessee by Vanderbilt University research group. Available at - [https://acc-dataset.github.io/datasets/](https://acc-dataset.github.io/datasets/).
   - [Two-vehicle ACC driving, Tennessee 2019](https://github.com/CATS-Lab/Filed-Experiment-Data-AV_Platooning_Data)
-- **CATS Open Datasets** [2]. Three datasets were gathered in Tampa, Florida, and Madison, Wisconsin by the CATS Lab. Available at - [https://github.com/CATS-Lab](https://github.com/CATS-Lab).
+- **MircoSimACC Dataset** [2]. Collected in four cities in Florida, including Delray Beach, Loxahatchee, Boca Raton, and Parkland by the Florida Atlantic University research group. Available at  -[https://github.com/microSIM-ACC/ICE](https://github.com/microSIM-ACC/ICE).
+  - [ICE](https://github.com/microSIM-ACC/ICE)
+- **CATS Open Datasets** [3]. Three datasets were gathered in Tampa, Florida, and Madison, Wisconsin by the CATS Lab. Available at - [https://github.com/CATS-Lab](https://github.com/CATS-Lab).
   - [Filed-Experiment-Data-AV_Platooning_Data](https://github.com/CATS-Lab/Filed-Experiment-Data-AV_Platooning_Data)
   - [Filed-Experiment-Data-ACC_Data](https://github.com/CATS-Lab/Filed-Experiment-Data-ACC_Data)
-- **OpenACC Database** [3]. Four datasets were collected across Italy, Sweden, and Hungary by the European Commission's Joint Research Centre. Available at - [https://data.europa.eu/data/datasets/9702c950-c80f-4d2f-982f-44d06ea0009f?locale=en](https://data.europa.eu/data/datasets/9702c950-c80f-4d2f-982f-44d06ea0009f?locale=en).
+  - [CATS-UWMadison-AV-Data](https://github.com/MarkMaaaaa/CATS-UWMadison-AV-Data)
+- **OpenACC Database** [4]. Four datasets were collected across Italy, Sweden, and Hungary by the European Commission's Joint Research Centre. Available at - [https://data.europa.eu/data/datasets/9702c950-c80f-4d2f-982f-44d06ea0009f?locale=en](https://data.europa.eu/data/datasets/9702c950-c80f-4d2f-982f-44d06ea0009f?locale=en).
   - [Casale](https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/TransportExpData/JRCDBT0001/LATEST/Casale/)
   - [Vicolungo](https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/TransportExpData/JRCDBT0001/LATEST/Vicolungo/)
   - [AstaZero](https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/TransportExpData/JRCDBT0001/LATEST/AstaZero/)
   - [ZalaZone](https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/TransportExpData/JRCDBT0001/LATEST/ZalaZone/)
-- **Central Ohio ACC Datasets** [4]. Two datasets were collated in Ohio by UCLA's Mobility Lab and Transportation Research Center. Available at - 
+- **Central Ohio ACC Datasets** [5]. Two datasets were collated in Ohio by UCLA's Mobility Lab and Transportation Research Center. Available at - 
   - [Advanced Driver Assistance System (ADAS)-Equipped Single-Vehicle Data for Central Ohio](https://catalog.data.gov/dataset/advanced-driver-assistance-system-adas-equipped-single-vehicle-data-for-central-ohio)
   - [Advanced Driver Assistance System (ADAS)-Equipped Two-Vehicle Data for Central Ohio](https://catalog.data.gov/dataset/advanced-driver-assistance-system-adas-equipped-two-vehicle-data-for-central-ohio)
-- **Waymo Open Dataset** [5, 6]. Two datasets were collected in six cities including San Francisco, Mountain View, and Los Angeles in California, Phoenix in Arizona, Detroit in Michigan, and Seattle in Washington by Waymo. Available at - 
+- **Waymo Open Dataset** [6, 7]. Two datasets were collected in six cities including San Francisco, Mountain View, and Los Angeles in California, Phoenix in Arizona, Detroit in Michigan, and Seattle in Washington by Waymo. Available at - 
   - [Waymo Motion Dataset](https://waymo.com/open/data/motion/)
   - [Vehicle trajectory data processed from the Waymo Open Dataset](https://data.mendeley.com/datasets/wfn2c3437n/2)
-- **Argoverse 2 Motion Forecasting Dataset** [7]. Collected from Austin in Texas, Detroit in Michigan, Miami in Florida, Pittsburgh in Pennsylvania, Palo Alto in California, and Washington, D.C. by Argo AI with researchers from Carnegie Mellon University and the Georgia Institute of Technology. Available at - 
+- **Argoverse 2 Motion Forecasting Dataset** [8]. Collected from Austin in Texas, Detroit in Michigan, Miami in Florida, Pittsburgh in Pennsylvania, Palo Alto in California, and Washington, D.C. by Argo AI with researchers from Carnegie Mellon University and the Georgia Institute of Technology. Available at - 
   - [Argoverse 2 Motion Forcasting Dataset](https://www.argoverse.org/av2.html)
 
 For more details of the datasets, please refer to the reference and our paper.
@@ -49,20 +54,16 @@ We also recommend using other software packages such as R to effectively analyze
 
 The code related to our data processing and validation are all stored in folder `\Code`. This folder contain the following files:
 
-- **Main.py** - The main function calls data processing and analysis functions for each dataset.
+- **main.py** - The main function calls data processing and analysis functions for each dataset.
 - **trajectory_extraction.py** - Code used in Step 1 to extract AV longitudinal trajectories.
 - **data_transformation.py** - Code used in Step 1 to convert all datasets to a unified format.
 - **data_cleaning.py** - Code used in Steps 2 and 3 for data cleaning.
 - **data_analysis.py** - Code used to analyze data statistics, plot traffic performance of datasets, and plot scatter plots.
 - **model_calibration.py** - An example tool to use the processed data to calibrate a linear car-following model.
 
-To use this repo, run Python script `Main.py`. As you proceed through each Python script, always verify the paths for both the input and output files. This ensures that everything runs smoothly.
-
-**The code will be made available upon the paper's acceptance.**
+To use this repo, run Python script `main.py`. As you proceed through each Python script, always verify the paths for both the input and output files. This ensures that everything runs smoothly.
 
 ### Data
-
-Extracted datasets are stored in [Box link](https://uwmadison.box.com/s/6e74ehpj2rx6kbjnma1b1ok4fupe5nkb).
 
 Data attributes are shown below:
 
@@ -71,6 +72,7 @@ Data attributes are shown below:
 | Trajectory_ID | ID of the longitudinal trajectory.           | $i\in \mathcal{I}$.                                          | N/A  |
 | Time_Index    | Common time stamp in one trajectory.         | $t\in \mathcal{T}_i, i\in \mathcal{I}$.                      | s    |
 | ID_LV         | LV (lead vehicle) ID.                        | $c^{\mathrm{l}}_i, i\in \mathcal{I}$. Label each FAV with a different ID and all HVs with -1. | N/A  |
+| Type\_LV      | LV is AV or human-driving vehicle.           | Label AV with 1 and human-driving vehicles with 0.           | N/A  |
 | Pos_LV        | LV position in the Frenet coordinate.        | $p^{\mathrm{l}}_{it}=p^{\mathrm{f}}_{it}+h_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
 | Speed_LV      | LV speed.                                    | $v^{\mathrm{l}}_{it}=\frac{p^{\mathrm{l}}_{i(t+1)}-p^{\mathrm{l}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s  |
 | Acc_LV        | LV acceleration.                             | $a^{\mathrm{l}}_{it}=\frac{v^{\mathrm{l}}_{i(t+1)}-v^{\mathrm{l}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s² |
@@ -88,6 +90,10 @@ The FAV ID are provided below:
 
 - 0 - A commercially available 2019 SUV with a full speed range adaptive cruise control system.
 
+**MicroSimACC Dataset:**
+
+- 0 - Toyota Corolla LE 2020
+
 **CATS ACC Dataset:**
 
 - 0 - Lincoln MKZs 2016 (Black)
@@ -98,7 +104,7 @@ The FAV ID are provided below:
 - 0 - Lincoln MKZs 2016 (Black)
 - 1 - Lincoln MKZs 2017 (Red)
 
-**CATS UW Dataset:**
+**CATS UWM Dataset:**
 
 - 0 - Lincoln MKZs 2017 (Red)
 
@@ -175,14 +181,16 @@ If you have any questions, please feel free to contact CATS Lab in UW-Madison. W
 
 [1] Wang, Yanbing, George Gunter, Matthew Nice, and Daniel B. Work. "Estimating adaptive cruise control model parameters from on-board radar units." *arXiv preprint arXiv:1911.06454* (2019).
 
-[2] Shi, Xiaowei, and Xiaopeng Li. "Empirical study on car-following characteristics of commercial automated vehicles with different headway settings." *Transportation research part C: emerging technologies* 128 (2021): 103134.
+[2] Yang, Mingyuan, Pablo Chon-Kan Munoz, Servet Lapardhaja, Yaobang Gong, Md Ashraful Imran, Md Tausif Murshed, Kemal Yagantekin, Md Mahede Hasan Khan, Xingan Kan, and Choungryeol Lee. "MicroSimACC: an open database for field experiments on the potential capacity impact of commercial Adaptive Cruise Control (ACC)." *Transportmetrica A: Transport Science* (2024): 1-30.
 
-[3] Makridis, Michail, Konstantinos Mattas, Aikaterini Anesiadou, and Biagio Ciuffo. "OpenACC. An open database of car-following experiments to study the properties of commercial ACC systems." *Transportation research part C: emerging technologies* 125 (2021): 103047.
+[3] Shi, Xiaowei, and Xiaopeng Li. "Empirical study on car-following characteristics of commercial automated vehicles with different headway settings." *Transportation research part C: emerging technologies* 128 (2021): 103134.
 
-[4] Xia, Xin, Zonglin Meng, Xu Han, Hanzhao Li, Takahiro Tsukiji, Runsheng Xu, Zhaoliang Zheng, and Jiaqi Ma. "An automated driving systems data acquisition and analytics platform." *Transportation research part C: emerging technologies* 151 (2023): 104120.
+[4] Makridis, Michail, Konstantinos Mattas, Aikaterini Anesiadou, and Biagio Ciuffo. "OpenACC. An open database of car-following experiments to study the properties of commercial ACC systems." *Transportation research part C: emerging technologies* 125 (2021): 103047.
 
-[5] Hu, Xiangwang, Zuduo Zheng, Danjue Chen, Xi Zhang, and Jian Sun. "Processing, assessing, and enhancing the Waymo autonomous vehicle open dataset for driving behavior research." *Transportation Research Part C: Emerging Technologies* 134 (2022): 103490.
+[5] Xia, Xin, Zonglin Meng, Xu Han, Hanzhao Li, Takahiro Tsukiji, Runsheng Xu, Zhaoliang Zheng, and Jiaqi Ma. "An automated driving systems data acquisition and analytics platform." *Transportation research part C: emerging technologies* 151 (2023): 104120.
 
-[6] Ettinger, Scott, Shuyang Cheng, Benjamin Caine, Chenxi Liu, Hang Zhao, Sabeek Pradhan, Yuning Chai et al. "Large scale interactive motion forecasting for autonomous driving: The waymo open motion dataset." In *Proceedings of the IEEE/CVF International Conference on Computer Vision*, pp. 9710-9719. 2021.
+[6] Hu, Xiangwang, Zuduo Zheng, Danjue Chen, Xi Zhang, and Jian Sun. "Processing, assessing, and enhancing the Waymo autonomous vehicle open dataset for driving behavior research." *Transportation Research Part C: Emerging Technologies* 134 (2022): 103490.
 
-[7] Wilson, Benjamin, William Qi, Tanmay Agarwal, John Lambert, Jagjeet Singh, Siddhesh Khandelwal, Bowen Pan et al. "Argoverse 2: Next generation datasets for self-driving perception and forecasting." *arXiv preprint arXiv:2301.00493* (2023).
+[7] Ettinger, Scott, Shuyang Cheng, Benjamin Caine, Chenxi Liu, Hang Zhao, Sabeek Pradhan, Yuning Chai et al. "Large scale interactive motion forecasting for autonomous driving: The waymo open motion dataset." In *Proceedings of the IEEE/CVF International Conference on Computer Vision*, pp. 9710-9719. 2021.
+
+[8] Wilson, Benjamin, William Qi, Tanmay Agarwal, John Lambert, Jagjeet Singh, Siddhesh Khandelwal, Bowen Pan et al. "Argoverse 2: Next generation datasets for self-driving perception and forecasting." *arXiv preprint arXiv:2301.00493* (2023).
