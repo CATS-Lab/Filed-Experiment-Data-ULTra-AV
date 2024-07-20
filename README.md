@@ -7,8 +7,7 @@ This repo provides the source code and data for the following paper:
 Zhou, Hang, Ke Ma, Shixiao Liang, Xiaopeng Li, and Xiaobo Qu. "A unified longitudinal trajectory dataset for automated vehicle." (2024) https://arxiv.org/abs/2406.00009
 
 
-
-We processed a unified trajectory dataset for automated vehicles' longitudinal behavior from 14 distinct sources. The extraction and cleaning of the dataset contains the following three steps - 1. extraction of longitudinal trajectory data, 2. general data cleaning, and 3. data-specific cleaning. The dataset obtained from step 2 and step 3 are named as the longitudinal trajectory data and car-following trajectory data. We also analyzed and validated the data by multiple methods. The obtained datasets are provided in [[Ultra-AV: A unified longitudinal trajectory dataset for automated vehicle (figshare.com)](https://figshare.com/articles/dataset/Ultra-AV_A_unified_longitudinal_trajectory_dataset_for_automated_vehicle/26339512)]. The Python code used to analyze the datasets can be found at https://github.com/CATS-Lab/Filed-Experiment-Data-ULTra-AV. We hope this dataset can benefit the study of microscopic longitudinal AV behaviors.
+We processed a unified trajectory dataset for automated vehicles' longitudinal behavior from 14 distinct sources. The extraction and cleaning of the dataset contains the following three steps - 1. extraction of longitudinal trajectory data, 2. general data cleaning, and 3. data-specific cleaning. The dataset obtained from step 2 and step 3 are named as the longitudinal trajectory data and car-following trajectory data. We also analyzed and validated the data by multiple methods. The obtained datasets are provided in [Ultra-AV: A unified longitudinal trajectory dataset for automated vehicle (figshare.com)(https://figshare.com/articles/dataset/Ultra-AV_A_unified_longitudinal_trajectory_dataset_for_automated_vehicle/26339512)]. The Python code used to analyze the datasets can be found at https://github.com/CATS-Lab/Filed-Experiment-Data-ULTra-AV. We hope this dataset can benefit the study of microscopic longitudinal AV behaviors.
 
 ## Original Datasets
 
@@ -36,11 +35,11 @@ We have examined 13 open-source datasets, each providing distinct insights into 
 - **Argoverse 2 Motion Forecasting Dataset** [8]. Collected from Austin in Texas, Detroit in Michigan, Miami in Florida, Pittsburgh in Pennsylvania, Palo Alto in California, and Washington, D.C. by Argo AI with researchers from Carnegie Mellon University and the Georgia Institute of Technology. Available at - 
   - [Argoverse 2 Motion Forcasting Dataset](https://www.argoverse.org/av2.html)
 
-For more details of the datasets, please refer to the reference and our paper.
+For more details on the datasets, please refer to the reference and our paper.
 
 ## Installation
 
-All the data are provided by CSV format. If you want to run our source code, please make sure you follow the prerequisites below:
+All the data are provided in CSV format. If you want to run our source code, please make sure you follow the prerequisites below:
 
 1. **Python 3** - Ensure you have a Python 3 environment set up.
 2. **Required Packages** - Install all necessary packages listed in the `requirements.txt` file.
@@ -52,7 +51,7 @@ We also recommend using other software packages such as R to effectively analyze
 
 ### Code
 
-The code related to our data processing and validation are all stored in folder `\Code`. This folder contain the following files:
+The code related to our data processing and validation are all stored in folder `\Code`. This folder contains the following files:
 
 - **main.py** - The main function calls data processing and analysis functions for each dataset.
 - **trajectory_extraction.py** - Code used in Step 1 to extract AV longitudinal trajectories.
@@ -61,7 +60,7 @@ The code related to our data processing and validation are all stored in folder 
 - **data_analysis.py** - Code used to analyze data statistics, plot traffic performance of datasets, and plot scatter plots.
 - **model_calibration.py** - An example tool to use the processed data to calibrate a linear car-following model.
 
-To use this repo, run Python script `main.py`. As you proceed through each Python script, always verify the paths for both the input and output files. This ensures that everything runs smoothly.
+To use this repo, run the Python script `main.py`. As you proceed through each Python script, always verify the paths for both the input and output files. This ensures that everything runs smoothly.
 
 ### Data
 
@@ -72,23 +71,23 @@ Data attributes are shown below:
 | Trajectory_ID | ID of the longitudinal trajectory.           | $i\in \mathcal{I}$.                                          | N/A  |
 | Time_Index    | Common time stamp in one trajectory.         | $t\in \mathcal{T}_i, i\in \mathcal{I}$.                      | s    |
 | ID_LV         | LV (lead vehicle) ID.                        | $c^{\mathrm{l}}_i, i\in \mathcal{I}$. Label each FAV with a different ID and all HVs with -1. | N/A  |
-| Type\_LV      | LV is AV or human-driving vehicle.           | Label AV with 1 and human-driving vehicles with 0.           | N/A  |
-| Pos_LV        | LV position in the Frenet coordinate.        | $p^{\mathrm{l}}_{it}=p^{\mathrm{f}}_{it}+h_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
+| Type\_LV      | LV is an AV or human-driving vehicle.           | Label AV with 1 and human-driving vehicles with 0.           | N/A  |
+| Pos_LV        | LV position in the Frenet coordinates.        | $p^{\mathrm{l}}_{it}=p^{\mathrm{f}}_{it}+h_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
 | Speed_LV      | LV speed.                                    | $v^{\mathrm{l}}_{it}=\frac{p^{\mathrm{l}}_{i(t+1)}-p^{\mathrm{l}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s  |
 | Acc_LV        | LV acceleration.                             | $a^{\mathrm{l}}_{it}=\frac{v^{\mathrm{l}}_{i(t+1)}-v^{\mathrm{l}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s² |
 | ID_FAV        | FAV (following automated vehicle) ID.        | $c^{\mathrm{f}}_i, i\in \mathcal{I}$. Label each FAV with a different ID. | N/A  |
-| Pos_FAV       | FAV position in the Frenet coordinate.       | $p^{\mathrm{f}}_{it}=p^{\mathrm{f}}_{i(t-1)}+\Delta t \cdot v^{\mathrm{f}}_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
+| Pos_FAV       | FAV position in the Frenet coordinates.       | $p^{\mathrm{f}}_{it}=p^{\mathrm{f}}_{i(t-1)}+\Delta t \cdot v^{\mathrm{f}}_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
 | Speed_FAV     | FAV speed.                                   | $v^{\mathrm{f}}_{it}=\frac{p^{\mathrm{f}}_{i(t+1)}-p^{\mathrm{f}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s  |
 | Acc_FAV       | FAV acceleration.                            | $a^{\mathrm{f}}_{it}=\frac{v^{\mathrm{f}}_{i(t+1)}-v^{\mathrm{f}}_{it}}{\Delta t}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s² |
 | Space_Gap     | Bump-to-bump distance between two vehicles.  | $g_{it}=p^{\mathrm{l}}_{it}-p^{\mathrm{f}}_{it} - l^{\mathrm{f}}/2 -l^{\mathrm{l}}/2, i\in \mathcal{I}, t\in \mathcal{T}_i$, where $l^{\mathrm{f}}$ and $l^{\mathrm{f}}$ are the length of the LV and the FAV. | m    |
 | Space_Headway | Distance between the center of two vehicles. | $h_{it}=p^{\mathrm{l}}_{it}-p^{\mathrm{f}}_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m    |
 | Speed_Diff    | Speed difference of the two vehicles.        | $\Delta v_{it}=v^{\mathrm{l}}_{it}-v^{\mathrm{f}}_{it}, i\in \mathcal{I}, t\in \mathcal{T}_i$. | m/s  |
 
-The FAV ID are provided below:
+The FAV IDs are provided below:
 
 **Vanderbilt Two-vehicle ACC Dataset:**
 
-- 0 - A commercially available 2019 SUV with a full speed range adaptive cruise control system.
+- 0 - A commercially available 2019 SUV with a full-speed range adaptive cruise control system.
 
 **MicroSimACC Dataset:**
 
@@ -167,7 +166,7 @@ The FAV ID are provided below:
 
 - 0 - Argo AI self-driving Ford
 
-For more details of the labels and the vehicle types, please refer to our paper.
+For more details on the labels and the vehicle types, please refer to our paper.
 
 ## Developers
 
@@ -193,8 +192,4 @@ If you have any questions, please feel free to contact CATS Lab in UW-Madison. W
 
 [7] Ettinger, Scott, Shuyang Cheng, Benjamin Caine, Chenxi Liu, Hang Zhao, Sabeek Pradhan, Yuning Chai et al. "Large scale interactive motion forecasting for autonomous driving: The waymo open motion dataset." In *Proceedings of the IEEE/CVF International Conference on Computer Vision*, pp. 9710-9719. 2021.
 
-<<<<<<< HEAD
 [8] Wilson, Benjamin, William Qi, Tanmay Agarwal, John Lambert, Jagjeet Singh, Siddhesh Khandelwal, Bowen Pan et al. "Argoverse 2: Next generation datasets for self-driving perception and forecasting." *arXiv preprint arXiv:2301.00493* (2023).
-=======
-[8] Wilson, Benjamin, William Qi, Tanmay Agarwal, John Lambert, Jagjeet Singh, Siddhesh Khandelwal, Bowen Pan et al. "Argoverse 2: Next generation datasets for self-driving perception and forecasting." *arXiv preprint arXiv:2301.00493* (2023).
->>>>>>> 5602a552dd06b7bce10d10fdff5f98dc55ef64db
