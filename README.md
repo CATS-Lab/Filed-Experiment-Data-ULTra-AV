@@ -10,7 +10,7 @@ We processed a unified trajectory dataset for automated vehicles' longitudinal b
 
 ## Original Datasets
 
-We have examined 13 open-source datasets, each providing distinct insights into AV behavior across various driving conditions and scenarios. These open-source datasets are from six providers:
+We have examined 14 open-source datasets, each providing distinct insights into AV behavior across various driving conditions and scenarios. These open-source datasets are from six providers:
 
 - **Vanderbilt ACC Dataset** [1]. Collected in Nashville, Tennessee by Vanderbilt University research group. Available at - [https://acc-dataset.github.io/datasets/](https://acc-dataset.github.io/datasets/).
   - [Two-vehicle ACC driving, Tennessee 2019](https://github.com/CATS-Lab/Filed-Experiment-Data-AV_Platooning_Data)
