@@ -203,14 +203,14 @@ def Waymo_extract_cf_traj(data, straight_threshold=0.9, direction_threshold=0.98
         if nearest_idx is None:
             continue
         for _, row in group.iterrows():
-            leader_x = row[f'x_{av_idx}']
-            leader_y = row[f'y_{av_idx}']
-            leader_length = row[f'length_{av_idx}']
-            leader_speed = row[f'speed_{av_idx}']
-            follower_x = row[f'x_{nearest_idx}']
-            follower_y = row[f'y_{nearest_idx}']
-            follower_length = row[f'length_{nearest_idx}']
-            follower_speed = row[f'speed_{nearest_idx}']
+            follower_x = row[f'x_{av_idx}']
+            follower_y = row[f'y_{av_idx}']
+            follower_length = row[f'length_{av_idx}']
+            follower_speed = row[f'speed_{av_idx}']
+            leader_x = row[f'x_{nearest_idx}']
+            leader_y = row[f'y_{nearest_idx}']
+            leader_length = row[f'length_{nearest_idx}']
+            leader_speed = row[f'speed_{nearest_idx}']
             new_row = {'Trajectory_ID': traj_id, 'leader_speed': leader_speed, 'follower_speed': follower_speed,
                        'leader_x': leader_x, 'leader_y': leader_y, 'leader_length': leader_length,
                        'follower_x': follower_x, 'follower_y': follower_y, 'follower_length': follower_length}
